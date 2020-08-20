@@ -5,6 +5,9 @@ using System.Threading;
 
 namespace Zadatak_1
 {
+    /// <summary>
+    /// This class contains members for simulation car racing.
+    /// </summary>
     class Race
     {
         public static EventWaitHandle waitingAllCars = new ManualResetEvent(false);

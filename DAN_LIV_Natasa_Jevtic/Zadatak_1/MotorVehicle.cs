@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Zadatak_1
 {
+    /// <summary>
+    /// Abstract class MotorVehicle.
+    /// </summary>
     abstract class MotorVehicle
     {
         public double EngineDisplacement { get; set; }
@@ -16,7 +15,10 @@ namespace Zadatak_1
         public int EngineNumber { get; set; }
         public string[] Colors { get; set; } = { "blue", "red", "black", "white", "grey" };
         public static Random random = new Random();
-
+        /// <summary>
+        /// Parameterless constructor.
+        /// </summary>
+        /// <remarks>Sets color of vehicle to random color.</remarks>
         public MotorVehicle()
         {
             Color = Colors[random.Next(0, Colors.Length)];
