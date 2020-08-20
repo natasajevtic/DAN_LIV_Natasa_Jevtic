@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Zadatak_1
 {
@@ -16,6 +13,7 @@ namespace Zadatak_1
 
         static void Main(string[] args)
         {
+            Race race = new Race();
             //creating objects and adding to collections
             for (int i = 0; i < 2; i++)
             {
@@ -33,6 +31,42 @@ namespace Zadatak_1
                 Console.WriteLine(i);
                 Thread.Sleep(1000);
             }
+            //threads for every car
+            for (int i = 0; i < cars.Count; i++)
+            {
+                int temp = i;
+                Thread car = new Thread(() => race.Racing(cars[temp]));
+                car.Start();
+            }
+            //creating orange golf
+            Car orangeGolf = new Car
+            {
+                Color = "orange",
+                Manufacturer = "Golf",
+                TankVolume = 55
+            };
+            cars.Add(orangeGolf);
+            Console.WriteLine(orangeGolf.RegistrationNumber + " " + orangeGolf.Color + " " + orangeGolf.Manufacturer + " joined the race.");
+
+            //thread for orange golf
+            Thread threadForOrangeGolf = new Thread(() => race.Racing(orangeGolf));
+            threadForOrangeGolf.Start();
+            //thread for reducing the fuel
+            Thread reducerOfFuel = new Thread(race.ReduceFuel)
+            {
+                IsBackground = true
+            };
+            reducerOfFuel.Start();
+            //thread for semaphore
+            Thread changeSemaphoreColor = new Thread(race.Semaphore)
+            {
+                IsBackground = true
+            };
+            changeSemaphoreColor.Start();            
+            //thread for displaying race result
+            Thread result = new Thread(Race.PrintResult);
+            result.Start();
+            Console.ReadLine();
         }
     }
 }
