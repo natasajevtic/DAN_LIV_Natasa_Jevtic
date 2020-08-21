@@ -51,13 +51,13 @@ namespace Zadatak_1
             {
                 if (counterOfCarPassedSemaphore != 3)
                 {
-                    semaphoreColor = colorsOnSemaphore[1];
+                    semaphoreColor = colorsOnSemaphore[0];
                     Console.WriteLine(semaphoreColor + " light.");
                     Thread.Sleep(2000);
                 }
                 if (counterOfCarPassedSemaphore != 3)
                 {
-                    semaphoreColor = colorsOnSemaphore[0];
+                    semaphoreColor = colorsOnSemaphore[1];
                     Console.WriteLine(semaphoreColor + " light.");
                     Thread.Sleep(2000);
                 }

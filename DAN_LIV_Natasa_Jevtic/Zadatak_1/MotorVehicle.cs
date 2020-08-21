@@ -15,6 +15,7 @@ namespace Zadatak_1
         public int EngineNumber { get; set; }
         public string[] Colors { get; set; } = { "blue", "red", "black", "white", "grey" };
         public static Random random = new Random();
+        public string[] MotorTypes { get; set; } = { "SRM", "PMSM", "DC" };
         /// <summary>
         /// Parameterless constructor.
         /// </summary>
@@ -22,6 +23,8 @@ namespace Zadatak_1
         public MotorVehicle()
         {
             Color = Colors[random.Next(0, Colors.Length)];
+            EngineType = MotorTypes[random.Next(0, MotorTypes.Length)];
+            Weight = random.Next(1000, 5000);
         }
 
         public abstract void Start(object obj);

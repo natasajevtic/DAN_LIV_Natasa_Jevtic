@@ -26,7 +26,7 @@ namespace Zadatak_1
             }
             //countdown of 5 seconds
             int seconds = 5;
-            for (int i = seconds; i > 0; i--)
+            for (int i = seconds; i >= 0; i--)
             {
                 Console.WriteLine(i);
                 Thread.Sleep(1000);

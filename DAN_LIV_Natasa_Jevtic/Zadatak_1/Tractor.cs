@@ -11,6 +11,14 @@ namespace Zadatak_1
         public int Wheelbase { get; set; }
         public string Drive { get; set; }
         /// <summary>
+        /// Parameterless constructor.
+        /// </summary>
+        public Tractor() : base ()
+        {
+            TireSize = random.NextDouble() * 100;
+            Wheelbase = random.Next() * 1000;
+        }
+        /// <summary>
         /// This method displays message that tractor is started moving.
         /// </summary>
         /// <param name="tractor">Object of class Tractor.</param>

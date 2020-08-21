@@ -9,12 +9,12 @@ namespace Zadatak_1
     {
         public string RegistrationNumber { get; set; }
         public int NumberOfDoors { get; set; }
-        public int MyProperty { get; set; }
         public int TankVolume { get; set; }
         public string TransmissionType { get; set; }
         public string Manufacturer { get; set; }
         public int TrafficLicenseNumber { get; set; }
         public string[] Manufacturers { get; set; } = { "Ford", "Nissan", "Honda", "BMW" };
+        public int[] Doors { get; set; } = { 3, 5 };
         /// <summary>
         /// Parameterless constructor.
         /// </summary>
@@ -24,6 +24,8 @@ namespace Zadatak_1
             Manufacturer = Manufacturers[random.Next(0, Manufacturers.Length)];
             TankVolume = 55;
             RegistrationNumber = random.Next(1000, 2000).ToString();
+            NumberOfDoors = Doors[random.Next(0, Doors.Length)];
+            TrafficLicenseNumber = random.Next(1000, 5000);
         }
         /// <summary>
         /// This method displays message that car started moving.

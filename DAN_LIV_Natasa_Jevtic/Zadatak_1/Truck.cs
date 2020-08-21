@@ -8,6 +8,15 @@ namespace Zadatak_1
         public double Height { get; set; }
         public int NumberOfSeats { get; set; }
         /// <summary>
+        /// Parameterless constructor.
+        /// </summary>
+        public Truck() : base ()
+        {
+            Capacity = random.NextDouble() * 10;
+            Height = random.NextDouble() * 1000;
+            NumberOfSeats = 3;
+        }
+        /// <summary>
         /// This method displays message that truck is loading items.
         /// </summary>
         public void Load()
